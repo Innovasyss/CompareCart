@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Prices</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="development-message">
+        The website is still in development
+    </div>
+    <header>
+        <a href="https://imgbb.com/"><img src="https://i.ibb.co/dgxBjZ7/logo.png" alt="logo" class="logo" border="0"></a>
+        <h1>CompareCart.com</h1>
+        <input type="text" placeholder="Search for products...">
+    </header>
+    <div class="comparison-container">
+        <h2>Price Comparison for Product <span id="product-id"></span></h2>
+        <div id="price-comparison">
+            <!-- Price comparison details will be inserted here -->
+        </div>
+    </div>
+    <footer>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://www.instagram.com/yourprofile" target="_blank">Contact Us</a>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('product');
+            document.getElementById('product-id').textContent = productId;
+
+            // Fetch price comparison data using APIs
+            // This example uses mock data for demonstration
+            const prices = [
+                { store: 'Amazon', price: '$999', link: 'https://www.amazon.com' },
+                { store: 'Flipkart', price: '₹74,999', link: 'https://www.flipkart.com' }
+            ];
+
+            const comparisonContainer = document.getElementById('price-comparison');
+            prices.forEach(price => {
+                const priceElement = document.createElement('div');
+                priceElement.classList.add('price-column');
+                priceElement.innerHTML = `
+                    <p><strong>${price.store}:</strong> ${price.price}</p>
+                    <a href="${price.link}" target="_blank">Buy Now</a>
+                `;
+                comparisonContainer.appendChild(priceElement);
+            });
+        });
+    </script>
+</body>
+</html>

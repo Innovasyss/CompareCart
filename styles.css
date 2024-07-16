@@ -1,0 +1,276 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    height: 60px;
+    margin-right: 20px;
+}
+
+header h1 {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+header input {
+    width: 300px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.product-row-container {
+    margin: 20px;
+}
+
+.product-row {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.product {
+    flex: 0 0 auto;
+    width: 150px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #cc7a00;
+}
+
+.comparison-container {
+    margin: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.comparison-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#price-comparison {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.price-column {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    flex: 1;
+    margin: 10px;
+    max-width: 200px;
+    box-sizing: border-box;
+}
+
+.price-column p {
+    margin: 0 0 10px;
+}
+
+.price-column a {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ff9900;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.price-column a:hover {
+    background-color: #cc7a00;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    header .logo {
+        height: 50px;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    header input {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .product-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .comparison-container {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .price-column {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        height: 40px;
+    }
+
+    header h1 {
+        font-size: 1rem;
+    }
+
+    .product-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .comparison-container {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    .price-column {
+        margin: 5px 0;
+    }
+}
+
+/* New CSS for the notification */
+.notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.notification-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+}
+
+.notification-content p {
+    margin: 0 0 20px;
+    font-size: 1.2rem;
+}
+
+.notification-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.notification-content .close-btn:hover {
+    color: red;
+}
+
+.notification-content a {
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.notification-content a:hover {
+    text-decoration: underline;
+}
+.more-options-icon {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.more-options-icon:hover {
+    color: #ff9900;
+}
