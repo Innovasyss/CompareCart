@@ -13,34 +13,62 @@
         <input type="text" placeholder="Search for products...">
     </header>
     <div class="comparison-container">
-        <h2>Price Comparison for Product <span id="product-id"></span></h2>
+        <h2>Best Deal for <span id="product-name"></span></h2>
         <div id="price-comparison">
-            <!-- Price comparison ki details yaha -->
+            <!-- Price comparison details will be injected here -->
         </div>
     </div>
     <footer>
         <a href="index.html">Home</a>
         <a href="privacy.html">Privacy Policy</a>
-        <a href="https://www.instagram.com/yourprofile" target="_blank">Contact Us</a>
+        <a href="https://www.instagram.com/comparecart.tech" target="_blank">Contact Us</a>
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const urlParams = new URLSearchParams(window.location.search);
             const productId = urlParams.get('product');
-            document.getElementById('product-id').textContent = productId;
+            const productName = urlParams.get('name');
+            document.getElementById('product-name').textContent = productName;
 
-            // api yaha 
-            // ye example hai 
-            const prices = [
-                { store: 'Amazon', price: '$999', link: 'https://amzn.to/3LpYFQj' },
-                { store: 'Flipkart', price: '₹74,999', link: 'https://www.flipkart.com' }
-            ];
+            // Hardcoded product prices
+            const products = {
+                '1': [
+                    { store: 'Amazon', price: '$15', link: 'https://amzn.to/example1', image: 'images/cleanser.png' },
+                    { store: 'Flipkart', price: '₹999', link: 'https://www.flipkart.com/example1', image: 'images/cleanser.png' }
+                ],
+                '2': [
+                    { store: 'Amazon', price: '$50', link: 'https://amzn.to/example2', image: 'images/controller.png' },
+                    { store: 'Flipkart', price: '₹3,999', link: 'https://www.flipkart.com/example2', image: 'images/controller.png' }
+                ],
+                '3': [
+                    { store: 'Amazon', price: '$20', link: 'https://amzn.to/example3', image: 'images/hairspray.png' },
+                    { store: 'Flipkart', price: '₹1,299', link: 'https://www.flipkart.com/example3', image: 'images/hairspray.png' }
+                ],
+                '4': [
+                    { store: 'Amazon', price: '$999', link: 'https://amzn.to/example4', image: 'images/IPhoen-14-Pro.png' },
+                    { store: 'Flipkart', price: '₹74,999', link: 'https://www.flipkart.com/example4', image: 'images/IPhoen-14-Pro.png' }
+                ],
+                '5': [
+                    { store: 'Amazon', price: '$800', link: 'https://amzn.to/example5', image: 'images/laptop.png' },
+                    { store: 'Flipkart', price: '₹60,999', link: 'https://www.flipkart.com/example5', image: 'images/laptop.png' }
+                ],
+                '6': [
+                    { store: 'Amazon', price: '$50', link: 'https://amzn.to/example6', image: 'images/shoes.png' },
+                    { store: 'Flipkart', price: '₹3,999', link: 'https://www.flipkart.com/example6', image: 'images/shoes.png' }
+                ],
+                '7': [
+                    { store: 'Amazon', price: '$200', link: 'https://amzn.to/example7', image: 'images/watch.png' },
+                    { store: 'Flipkart', price: '₹15,999', link: 'https://www.flipkart.com/example7', image: 'images/watch.png' }
+                ]
+            };
 
+            const productPrices = products[productId];
             const comparisonContainer = document.getElementById('price-comparison');
-            prices.forEach(price => {
+            productPrices.forEach(price => {
                 const priceElement = document.createElement('div');
                 priceElement.classList.add('price-column');
                 priceElement.innerHTML = `
+                    <img src="${price.image}" alt="${price.store}">
                     <p><strong>${price.store}:</strong> ${price.price}</p>
                     <a href="${price.link}" target="_blank">Buy Now</a>
                 `;
