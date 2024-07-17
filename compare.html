@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compare Prices</title>
+    <title>Find the best deal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="development-message">
-        The website is still in development
-    </div>
     <header>
         <a href="https://imgbb.com/"><img src="https://i.ibb.co/dgxBjZ7/logo.png" alt="logo" class="logo" border="0"></a>
-        <h1>CompareCart.com</h1>
+        <h1>CompareCart.tech</h1>
         <input type="text" placeholder="Search for products...">
     </header>
     <div class="comparison-container">
         <h2>Price Comparison for Product <span id="product-id"></span></h2>
         <div id="price-comparison">
-            <!-- Price comparison details will be inserted here -->
+            <!-- Price comparison ki details yaha -->
         </div>
     </div>
     <footer>
@@ -32,10 +29,10 @@
             const productId = urlParams.get('product');
             document.getElementById('product-id').textContent = productId;
 
-            // Fetch price comparison data using APIs
-            // This example uses mock data for demonstration
+            // api yaha 
+            // ye example hai 
             const prices = [
-                { store: 'Amazon', price: '$999', link: 'https://www.amazon.com' },
+                { store: 'Amazon', price: '$999', link: 'https://amzn.to/3LpYFQj' },
                 { store: 'Flipkart', price: '₹74,999', link: 'https://www.flipkart.com' }
             ];
 
