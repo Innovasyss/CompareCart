@@ -9,104 +9,115 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
     <header>
         <i class="fas fa-bars more-options-icon" onclick="showNotReadyMessage()"></i>
         <a href="https://imgbb.com/"><img src="https://i.ibb.co/dgxBjZ7/logo.png" alt="logo" class="logo" border="0"></a>
         <h1>CompareCart.tech</h1>
-        <input type="text" placeholder="Search for products...">
+        <input type="text" id="search-bar" placeholder="Search for products..." onkeyup="searchProducts()">
     </header>
+
     
-    <div class="product-row-container">
+    <div class="product-row-container" id="product-container">
         <div class="product-row">
-            <div class="product" data-product-id="1" data-product-name="Cleanser">
-                <img src="images/cleanser.png" alt="Cleanser">
+            <div class="product" data-product-id="1" data-product-name="Cetaphil Face Wash Gentle Skin Cleanser for Dry to Normal, Sensitive Skin, 125 ml Hydrating Face Wash with Niacinamide, Vitamin B5">
+                <img src="images/cleanser.png" alt="Cetaphil Face Wash Gentle Skin Cleanser for Dry to Normal, Sensitive Skin, 125 ml Hydrating Face Wash with Niacinamide, Vitamin B5">
                 <p>Cetaphil Face Wash Gentle Skin Cleanser for Dry to Normal, Sensitive Skin, 125 ml Hydrating Face Wash with Niacinamide, Vitamin B5</p>
-                <button onclick="comparePrices(1, 'Cleanser')">Compare</button>
+                <button onclick="comparePrices(1, 'Cetaphil Face Wash Gentle Skin Cleanser for Dry to Normal, Sensitive Skin, 125 ml Hydrating Face Wash with Niacinamide, Vitamin B5')">Compare</button>
             </div>
-            <div class="product" data-product-id="2" data-product-name="Controller">
-                <img src="images/controller.png" alt="Controller">
+            <div class="product" data-product-id="2" data-product-name="Ant Esports GP110 Wired Gamepad, Compatible for PC & Laptop Computer (Windows 10/8 /7) / PS3 / Android">
+                <img src="images/controller.png" alt="Ant Esports GP110 Wired Gamepad, Compatible for PC & Laptop Computer (Windows 10/8 /7) / PS3 / Android">
                 <p>Ant Esports GP110 Wired Gamepad, Compatible for PC & Laptop Computer (Windows 10/8 /7) / PS3 / Android</p>
-                <button onclick="comparePrices(2, 'Controller')">Compare</button>
+                <button onclick="comparePrices(2, 'Ant Esports GP110 Wired Gamepad, Compatible for PC & Laptop Computer (Windows 10/8 /7) / PS3 / Android')">Compare</button>
             </div>
-            <div class="product" data-product-id="3" data-product-name="Hairspray">
+            <div class="product" data-product-id="3" data-product-name="Dasher Sea Salt Spray (100 Ml) (Frozz) Hair Volume, Texture, Smooth Hair With Bhringraj, Vitamin E - Hair Styling, Pack of 1">
                 <img src="images/hairspray.png" alt="Hairspray">
                 <p>Dasher Sea Salt Spray (100 Ml) (Frozz) Hair Volume, Texture, Smooth Hair With Bhringraj, Vitamin E - Hair Styling, Pack of 1</p>
                 <button onclick="comparePrices(3, 'Hairspray')">Compare</button>
             </div>
-            <div class="product" data-product-id="4" data-product-name="iPhone 14 Pro">
-                <img src="images/IPhoen-14-Pro.png" alt="iPhone 14 Pro">
-                <p>Apple iPhone 15 Pro (128 GB) - Natural Titanium</p>
-                <button onclick="comparePrices(4, 'iPhone 14 Pro')">Compare</button>
-            </div>
         </div>
         <div class="product-row">
-            <div class="product" data-product-id="5" data-product-name="Laptop">
+            <div class="product" data-product-id="5" data-product-name="Apple MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Space Grey
+            ">
                 <img src="images/laptop.png" alt="Laptop">
-                <p>Laptop</p>
+                <p>Apple MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Space Grey
+                </p>
                 <button onclick="comparePrices(5, 'Laptop')">Compare</button>
             </div>
-            <div class="product" data-product-id="6" data-product-name="Shoes">
+            <div class="product" data-product-id="6" data-product-name="Campus Trophy Casual Sneakers for Men | Stylish and Comfortable Casual Sneakers with Water resistant PU Upper, Soft Insole, and Anti-Slip Outsole">
                 <img src="images/shoes.png" alt="Shoes">
-                <p>Shoes</p>
+                <p>Campus Trophy Casual Sneakers for Men | Stylish and Comfortable Casual Sneakers with Water resistant PU Upper, Soft Insole, and Anti-Slip Outsole</p>
                 <button onclick="comparePrices(6, 'Shoes')">Compare</button>
             </div>
-            <div class="product" data-product-id="7" data-product-name="Watch">
+            <div class="product" data-product-id="7" data-product-name="Apple Watch Series 9 [GPS 45mm] Smartwatch with Silver Aluminum Case with Winter Blue Sport Loop One Size. Fitness Tracker, Blood Oxygen & ECG Apps, Always-On Retina Display, Water Resistant">
                 <img src="images/watch.png" alt="Watch">
-                <p>Watch</p>
+                <p>Apple Watch Series 9 [GPS 45mm] Smartwatch with Silver Aluminum Case with Winter Blue Sport Loop One Size. Fitness Tracker, Blood Oxygen & ECG Apps, Always-On Retina Display, Water Resistant</p>
                 <button onclick="comparePrices(7, 'Watch')">Compare</button>
-            </div>
-            <div class="product" data-product-id="8" data-product-name="Boldfit Wrist Supporter">
-                <img src="images/gym.png" alt="Boldfit Wrist Supporter">
-                <p>Boldfit Wrist Supporter</p>
-                <button onclick="comparePrices(8, 'Boldfit Wrist Supporter')">Compare</button>
             </div>
         </div>
         <div class="product-row">
             <div class="product" data-product-id="9" data-product-name="Dress 1">
-                <img src="images/dress.jpg" alt="Dress 1">
-                <p>Dress 1</p>
-                <button onclick="comparePrices(9, 'Dress 1')">Compare</button>
+                <img src="images/dress.jpg" alt="KLOSIA Women Printed Flared A-Line Kurta with Pant and Dupatta Suit Set | Kurta Set | Wedding Suit">
+                <p>KLOSIA Women Printed Flared A-Line Kurta with Pant and Dupatta Suit Set | Kurta Set | Wedding Suit</p>
+                <button onclick="comparePrices(9, 'KLOSIA Women Printed Flared A-Line Kurta with Pant and Dupatta Suit Set | Kurta Set | Wedding Suit')">Compare</button>
             </div>
-            <div class="product" data-product-id="10" data-product-name="Dress 2">
+            <div class="product" data-product-id="10" data-product-name="ANNI DESIGNER Women's Kurta with Pant & Dupatta">
                 <img src="images/dress1.jpg" alt="Dress 2">
-                <p>Dress 2</p>
+                <p>ANNI DESIGNER Women's Kurta with Pant & Dupatta</p>
                 <button onclick="comparePrices(10, 'Dress 2')">Compare</button>
             </div>
-            <div class="product" data-product-id="11" data-product-name="Dress 3">
+            <div class="product" data-product-id="11" data-product-name="BLACKSTEP Women's Cotton Blend T-shirt & Pyjama Ethnic Co Ord Set, Printed Night Suit, Western Dress, Sleepwear with Relaxed Fit and Stylish Design">
                 <img src="images/dress2.jpg" alt="Dress 3">
-                <p>Dress 3</p>
+                <p>BLACKSTEP Women's Cotton Blend T-shirt & Pyjama Ethnic Co Ord Set, Printed Night Suit, Western Dress, Sleepwear with Relaxed Fit and Stylish Design</p>
                 <button onclick="comparePrices(11, 'Dress 3')">Compare</button>
+            </div>    
+        </div>
+        <div class="product-row">
+            <div class="product" data-product-id="13" data-product-name="CB-COLEBROOK Men's Casual Button Down Shirts Long Sleeve Linen Shirt Fashion Textured Beach Summer Shirt">
+                <img src="images/clothes.jpg" alt="Clothes">
+                <p>CB-COLEBROOK Men's Casual Button Down Shirts Long Sleeve Linen Shirt Fashion Textured Beach Summer Shirt</p>
+                <button onclick="comparePrices(13, 'Clothes')">Compare</button>
             </div>
-            <div class="product" data-product-id="12" data-product-name="Dress 4">
+            <div class="product" data-product-id="14" data-product-name="Ben Martin Men's Denim Cotton Oversized Loose Baggy Fit Jeans Pants for Men">
+                <img src="images/jeans.jpg" alt="Jeans">
+                <p>Ben Martin Men's Denim Cotton Oversized Loose Baggy Fit Jeans Pants for Men</p>
+                <button onclick="comparePrices(14, 'Jeans')">Compare</button>
+            </div>
+            <div class="product" data-product-id="15" data-product-name="Noble Monk Men's Regular Fit Polo Neck T-shirt | Half Sleeve | Stripe On Chest | Collared Neck Tshirt for Men">
+                <img src="images/tshirt.jpg" alt="T-shirt">
+                <p>Noble Monk Men's Regular Fit Polo Neck T-shirt | Half Sleeve | Stripe On Chest | Collared Neck Tshirt for Men</p>
+                <button onclick="comparePrices(15, 'T-shirt')">Compare</button>
+            </div>
+        </div>
+        <div class="product-row">
+            <div class="product" data-product-id="15" data-product-name="Apple iPhone 15 Pro (128 GB) - Natural Titanium">
+                <img src="images/IPhoen-14-Pro.png" alt="iPhone 14 Pro">
+                <p>Apple iPhone 15 Pro (128 GB) - Natural Titanium</p>
+                <button onclick="comparePrices(4, 'iPhone 14 Pro')">Compare</button>
+            </div>
+            <div class="product" data-product-id="16" data-product-name="hotfits Men's Black & Grey Cotton Regular Shorts - Workout, Gym, Running, Yoga and Sports Shorts - Camouflage Printed - Pack of 2">
+                <img src="images/shorts.jpg" alt="Shorts">
+                <p>hotfits Men's Black & Grey Cotton Regular Shorts - Workout, Gym, Running, Yoga and Sports Shorts - Camouflage Printed - Pack of 2</p>
+                <button onclick="comparePrices(16, 'Shorts')">Compare</button>
+            </div>
+            <div class="product" data-product-id="12" data-product-name="C J Enterprise Women's Pure Banarasi Silk Saree Kanjivaram Style Saree With Blouse Piece For Wedding (Vruksh)">
                 <img src="images/dress3.jpg" alt="Dress 4">
-                <p>Dress 4</p>
+                <p>C J Enterprise Women's Pure Banarasi Silk Saree Kanjivaram Style Saree With Blouse Piece For Wedding (Vruksh)</p>
                 <button onclick="comparePrices(12, 'Dress 4')">Compare</button>
             </div>
         </div>
         <div class="product-row">
-            <div class="product" data-product-id="13" data-product-name="Clothes">
-                <img src="images/clothes.jpg" alt="Clothes">
-                <p>Clothes</p>
-                <button onclick="comparePrices(13, 'Clothes')">Compare</button>
+            <div class="product" data-product-id="8" data-product-name="Boldfit Polyester Wrist Supporter for Gym Wrist Band for Men Gym & Women with Thumb Loop Straps Accessories for Men Hand Grip & Wrist Support Sports Straps for Gym, Weightlifting -(Grey)">
+                <img src="images/gym.png" alt="Boldfit Wrist Supporter">
+                <p>Boldfit Polyester Wrist Supporter for Gym Wrist Band for Men Gym & Women with Thumb Loop Straps Accessories for Men Hand Grip & Wrist Support Sports Straps for Gym, Weightlifting -(Grey)</p>
+                <button onclick="comparePrices(8, 'Boldfit Wrist Supporter')">Compare</button>
             </div>
-            <div class="product" data-product-id="14" data-product-name="Jeans">
-                <img src="images/jeans.jpg" alt="Jeans">
-                <p>Jeans</p>
-                <button onclick="comparePrices(14, 'Jeans')">Compare</button>
-            </div>
-            <div class="product" data-product-id="15" data-product-name="T-shirt">
-                <img src="images/tshirt.jpg" alt="T-shirt">
-                <p>T-shirt</p>
-                <button onclick="comparePrices(15, 'T-shirt')">Compare</button>
-            </div>
-            <div class="product" data-product-id="16" data-product-name="Shorts">
-                <img src="images/shorts.jpg" alt="Shorts">
-                <p>Shorts</p>
-                <button onclick="comparePrices(16, 'Shorts')">Compare</button>
-            </div>
+
+
+
+
+            
         </div>
-        <!-- Additional rows as needed -->
+        <!-- or row idhar ayege -->
     </div>
     
     <footer>
@@ -144,6 +155,68 @@
         function showNotReadyMessage() {
             showNotification("Website is still in development. Please check back later!");
         }
+
+        function searchProducts() {
+            var input = document.getElementById('search-bar').value.toLowerCase();
+            var products = document.querySelectorAll('.product');
+
+            products.forEach(function(product) {
+                var productName = product.getAttribute('data-product-name').toLowerCase();
+                var productDescription = product.querySelector('p').textContent.toLowerCase();
+
+                if (productName.includes(input) || productDescription.includes(input)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        // isse shuffle honga , array hai ye 
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        //  to shuffle products
+        function shuffleProducts() {
+    var container = document.getElementById('product-container');
+    var rows = Array.from(container.getElementsByClassName('product-row'));
+    var products = [];
+
+    // Gather all products
+    rows.forEach(function(row) {
+        var rowProducts = Array.from(row.getElementsByClassName('product'));
+        products = products.concat(rowProducts);
+    });
+
+    // Clear the container
+    container.innerHTML = '';
+
+    // Shuffle products array
+    shuffle(products);
+
+    // Create and append new rows with shuffled products
+    while (products.length > 0) {
+        var newRow = document.createElement('div');
+        newRow.classList.add('product-row');
+        for (let j = 0; j < 3; j++) {
+            if (products.length > 0) {
+                newRow.appendChild(products.shift());
+            }
+        }
+        container.appendChild(newRow);
+    }
+}
+
+
+        // Shuffle products on page load
+        window.onload = function() {
+            shuffleProducts();
+        };
     </script>
 </body>
 </html>
+

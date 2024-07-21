@@ -51,7 +51,7 @@ header input {
 }
 
 .product {
-    flex: 0 0 23%; /* Adjusted to fit 4 items per row with space between */
+    flex: 0 0 30%; /* Adjusted to fit 3 items per row */
     margin-bottom: 20px;
     text-align: center;
 }
@@ -65,9 +65,9 @@ header input {
 
 .product button {
     display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
+    width: 80%; /* Reduced width for better alignment */
+    padding: 15px; /* Increased height */
+    margin: 10px auto 0; /* Center align and margin adjustments */
     background-color: #32CD32; /* Light green */
     color: white;
     border: none;
