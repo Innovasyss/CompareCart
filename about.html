@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CompareCart.tech</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <i class="fas fa-bars more-options-icon" onclick="toggleSidebar()"></i>
+        <a href="index.html"><img src="https://i.ibb.co/dgxBjZ7/logo.png" alt="logo" class="logo" border="0"></a>
+        <h1>CompareCart.tech</h1>
+    </header>
+
+    <div id="sidebar" class="sidebar">
+        <a href="#" class="close-btn" onclick="toggleSidebar()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="#">Comming soon</a>
+        <a href="#">Comming soon</a>
+        <a href="#">Comming soon</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="about.html">About Us</a>
+    </div>
+
+    <div class="content-container">
+        <h2>About Us</h2>
+
+        <p>Welcome to <strong>CompareCart.tech</strong> – your go-to platform for finding the best deals and comparing product prices effortlessly!</p>
+        
+        <p>At CompareCart.tech, our mission is to simplify your shopping experience by providing a seamless way to compare prices and details of various products all in one place. Whether you're looking for the latest tech gadgets, everyday essentials, or fashionable attire, our platform helps you make informed decisions with ease.</p>
+
+        <h3>What We Do</h3>
+
+        <ul>
+            <li><strong>Product Comparison:</strong> Our website allows you to compare the prices and features of a wide range of products from different categories. Simply click the "Compare" button next to any product to see how it stacks up against others.</li>
+
+            <li><strong>Shuffled Product Display:</strong> To ensure you always see a fresh selection, our products are displayed in a randomized order each time you visit. This helps you discover new products and deals more easily.</li>
+
+            <li><strong>Search Functionality:</strong> Our advanced search bar helps you quickly find the products you're interested in by filtering through product names and descriptions.</li>
+        </ul>
+
+        <h3>Our Vision</h3>
+
+        <p>We believe that smart shopping should be accessible to everyone. By offering a user-friendly interface and comprehensive product details, we aim to empower our users with the information they need to make the best purchasing decisions.</p>
+
+        <h3>Get in Touch</h3>
+
+        <p>We value your feedback and are always here to help. If you have any questions, suggestions, or need assistance, feel free to contact us through our <a href="https://www.instagram.com/comparecart.tech" target="_blank">Contact Us</a> page.</p>
+
+        <p>Thank you for visiting CompareCart.tech. Happy shopping!</p>
+    </div>
+
+    <footer>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://www.instagram.com/comparecart.tech" target="_blank">Contact Us</a>
+    </footer>
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+            } else {
+                sidebar.style.width = "250px";
+            }
+        }
+    </script>
+</body>
+</html>
