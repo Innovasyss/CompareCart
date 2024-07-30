@@ -3,337 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find the best deal</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- FontAwesome CDN link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Register & Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <i class="fas fa-bars more-options-icon" onclick="showNotReadyMessage()"></i>
-        <a href="https://imgbb.com/"><img src="https://i.ibb.co/dgxBjZ7/logo.png" alt="logo" class="logo" border="0"></a>
-        <h1>CompareCart.tech</h1>
-        <input type="text" id="search-bar" placeholder="Search for products..." onkeyup="searchProducts()">
-    </header>
-
-    
-    <div class="product-row-container" id="product-container">
-        <div class="product-row">
-            
-            <div class="product" data-product-id="1" data-product-name="Cetaphil Face Wash Gentle Skin Cleanser for Dry to Normal, Sensitive Skin, 125 ml Hydrating Face Wash with Niacinamide, Vitamin B5">
-                <img src="images/cleanser.png" alt="Cetaphil Face Wash Gentle Skin Cleanser for Dry to Normal, Sensitive Skin, 125 ml Hydrating Face Wash with Niacinamide, Vitamin B5">
-                <p>Cetaphil Face Wash Gentle Skin Cleanser for Dry to Normal, Sensitive Skin, 125 ml Hydrating Face Wash with Niacinamide, Vitamin B5</p>
-                <button onclick="comparePrices(1, 'Cetaphil Face Wash Gentle Skin Cleanser for Dry to Normal, Sensitive Skin, 125 ml Hydrating Face Wash with Niacinamide, Vitamin B5')">Compare</button>
+    <div class="container" id="signup" style="display:none;">
+        <h1 class="form-title">Register</h1>
+        <form method="post" action="register.php">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="fName" id="fName" placeholder="First Name" required>
+                <label for="fname">First Name</label>
             </div>
-            <div class="product" data-product-id="2" data-product-name="Ant Esports GP110 Wired Gamepad, Compatible for PC & Laptop Computer (Windows 10/8 /7) / PS3 / Android">
-                <img src="images/controller.png" alt="Ant Esports GP110 Wired Gamepad, Compatible for PC & Laptop Computer (Windows 10/8 /7) / PS3 / Android">
-                <p>Ant Esports GP110 Wired Gamepad, Compatible for PC & Laptop Computer (Windows 10/8 /7) / PS3 / Android</p>
-                <button onclick="comparePrices(2, 'Ant Esports GP110 Wired Gamepad, Compatible for PC & Laptop Computer (Windows 10/8 /7) / PS3 / Android')">Compare</button>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="lName" id="lName" placeholder="Last Name" required>
+                <label for="lName">Last Name</label>
             </div>
-            <div class="product" data-product-id="3" data-product-name="Dasher Sea Salt Spray (100 Ml) (Frozz) Hair Volume, Texture, Smooth Hair With Bhringraj, Vitamin E - Hair Styling, Pack of 1">
-                <img src="images/hairspray.png" alt="Hairspray">
-                <p>Dasher Sea Salt Spray (100 Ml) (Frozz) Hair Volume, Texture, Smooth Hair With Bhringraj, Vitamin E - Hair Styling, Pack of 1</p>
-                <button onclick="comparePrices(3, 'Hairspray')">Compare</button>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <label for="email">Email</label>
             </div>
-            <div class="product" data-product-id="19" data-product-name=" Sony PlayStation®5 Console (slim)">
-                <img src="images/ps5.png" alt="Sony PlayStation®5 Console (slim)">
-                <p> Sony PlayStation®5 Console (slim)</p>
-                <button onclick="comparePrices(19, 'Sony PlayStation®5 Console slim')">Compare</button>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <label for="password">Password</label>
             </div>
-            <div class="product" data-product-id="20" data-product-name="Dot & Key Barrier Repair Hydrating Gentle Face Wash With Probiotics 15ml">
-                <img src="images/facewash.png" alt=" Dot & Key Barrier Repair Hydrating Gentle Face Wash With Probiotics 15ml">
-                <p>Dot & Key Barrier Repair Hydrating Gentle Face Wash With Probiotics 15ml </p>
-                <button onclick="comparePrices(20, 'Dot & Key Barrier Repair Hydrating Gentle Face Wash With Probiotics 15ml')">Compare</button>
-            </div>
-            <div class="product" data-product-id="21" data-product-name=" boAt Newly Launched Rockerz 255 Z Plus Bluetooth in-ear Neckband w/AI-ENx™ Tech, Spatial Audio, 50hrs Playback, Magnetic Power Buds, Dual Pairing, Google Fast Pair, Hearables App(Classic Black)">
-                <img src="images/earbands.png" alt="boAt Newly Launched Rockerz 255 Z Plus Bluetooth in-ear Neckband w/AI-ENx™ Tech, Spatial Audio, 50hrs Playback, Magnetic Power Buds, Dual Pairing, Google Fast Pair, Hearables App(Classic Black)">
-                <p>boAt Newly Launched Rockerz 255 Z Plus Bluetooth in-ear Neckband w/AI-ENx™ Tech, Spatial Audio, 50hrs Playback, Magnetic Power Buds, Dual Pairing, Google Fast Pair, Hearables App(Classic Black) </p>
-                <button onclick="comparePrices(21, 'boAt Newly Launched Rockerz 255 Z Plus Bluetooth in-ear Neckband w/AI-ENx™ Tech, Spatial Audio, 50hrs Playback, Magnetic Power Buds, Dual Pairing, Google Fast Pair, Hearables App(Classic Black) ')">Compare</button>
-            </div>     
-            <div class="product" data-product-id="4" data-product-name="Apple MacBook Air Laptop M1 chip,13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Space Grey">
-                <img src="images/laptop.png" alt="Laptop">
-                <p>Apple MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Space Grey
-                </p>
-                <button onclick="comparePrices(4, 'Laptop')">Compare</button>
-            </div>
-            <div class="product" data-product-id="5" data-product-name="Campus Trophy Casual Sneakers for Men | Stylish and Comfortable Casual Sneakers with Water resistant PU Upper, Soft Insole, and Anti-Slip Outsole">
-                <img src="images/shoes.png" alt="Shoes">
-                <p>Campus Trophy Casual Sneakers for Men | Stylish and Comfortable Casual Sneakers with Water resistant PU Upper, Soft Insole, and Anti-Slip Outsole</p>
-                <button onclick="comparePrices(5, 'Shoes')">Compare</button>
-            </div>
-            <div class="product" data-product-id="6" data-product-name="Apple Watch Series 9 [GPS 45mm] Smartwatch with Silver Aluminum Case with Winter Blue Sport Loop One Size. Fitness Tracker, Blood Oxygen & ECG Apps, Always-On Retina Display, Water Resistant">
-                <img src="images/watch.png" alt="Watch">
-                <p>Apple Watch Series 9 [GPS 45mm] Smartwatch with Silver Aluminum Case with Winter Blue Sport Loop One Size. Fitness Tracker, Blood Oxygen & ECG Apps, Always-On Retina Display, Water Resistant</p>
-                <button onclick="comparePrices(6, 'Watch')">Compare</button>
-            </div>
-            <div class="product" data-product-id="22" data-product-name="GIGABYTE Geforce RTX 4060 Eagle Oc 8G Graphics Card, 3X Windforce Fans, 8Gb 128-Bit Gddr6, Gv-N4060Eagle Oc-8Gd Video Card, pci_e_x16">
-                <img src="images/rtx.png" alt=" GIGABYTE Geforce RTX 4060 Eagle Oc 8G Graphics Card, 3X Windforce Fans, 8Gb 128-Bit Gddr6, Gv-N4060Eagle Oc-8Gd Video Card, pci_e_x16">
-                <p> GIGABYTE Geforce RTX 4060 Eagle Oc 8G Graphics Card, 3X Windforce Fans, 8Gb 128-Bit Gddr6, Gv-N4060Eagle Oc-8Gd Video Card, pci_e_x16</p>
-                <button onclick="comparePrices(22, 'GIGABYTE Geforce RTX 4060 Eagle Oc 8G Graphics Card, 3X Windforce Fans, 8Gb 128-Bit Gddr6, Gv-N4060Eagle Oc-8Gd Video Card, pci_e_x16')">Compare</button>
-            </div>
-            <div class="product" data-product-id="23" data-product-name="ZEBRONICS ZEB-JAGUAR Wireless Mouse, 2.4GHz with USB Nano Receiver, High Precision Optical Tracking, 4 Buttons, Plug & Play, Ambidextrous, for PC/Mac/Laptop (Black+Grey) ">
-                <img src="images/mouse.png" alt="ZEBRONICS ZEB-JAGUAR Wireless Mouse, 2.4GHz with USB Nano Receiver, High Precision Optical Tracking, 4 Buttons, Plug & Play, Ambidextrous, for PC/Mac/Laptop (Black+Grey) ">
-                <p>ZEBRONICS ZEB-JAGUAR Wireless Mouse, 2.4GHz with USB Nano Receiver, High Precision Optical Tracking, 4 Buttons, Plug & Play, Ambidextrous, for PC/Mac/Laptop (Black+Grey) </p>
-                <button onclick="comparePrices(23, 'ZEBRONICS ZEB-JAGUAR Wireless Mouse, 2.4GHz with USB Nano Receiver, High Precision Optical Tracking, 4 Buttons, Plug & Play, Ambidextrous, for PC/Mac/Laptop (Black+Grey)')">Compare</button>
-            </div>
-            <div class="product" data-product-id="24" data-product-name="Sony Alpha ILCE-7M3K Full-Frame 24.2MP Mirrorless Digital SLR Camera with 28-70mm Zoom Lens | 4K Full Frame | Real-Time Eye Auto Focus | Tiltable LCD, Low Light Camera - Black ">
-                <img src="images/camera.png" alt="Sony Alpha ILCE-7M3K Full-Frame 24.2MP Mirrorless Digital SLR Camera with 28-70mm Zoom Lens | 4K Full Frame | Real-Time Eye Auto Focus | Tiltable LCD, Low Light Camera - Black ">
-                <p>Sony Alpha ILCE-7M3K Full-Frame 24.2MP Mirrorless Digital SLR Camera with 28-70mm Zoom Lens | 4K Full Frame | Real-Time Eye Auto Focus | Tiltable LCD, Low Light Camera - Black </p>
-                <button onclick="comparePrices(24, 'Sony Alpha ILCE-7M3K Full-Frame 24.2MP Mirrorless Digital SLR Camera with 28-70mm Zoom Lens | 4K Full Frame | Real-Time Eye Auto Focus | Tiltable LCD, Low Light Camera - Black')">Compare</button>
-            </div>
-            <div class="product" data-product-id="7" data-product-name="Dress 1">
-                <img src="images/dress.jpg" alt="KLOSIA Women Printed Flared A-Line Kurta with Pant and Dupatta Suit Set | Kurta Set | Wedding Suit">
-                <p>KLOSIA Women Printed Flared A-Line Kurta with Pant and Dupatta Suit Set | Kurta Set | Wedding Suit</p>
-                <button onclick="comparePrices(7, 'KLOSIA Women Printed Flared A-Line Kurta with Pant and Dupatta Suit Set | Kurta Set | Wedding Suit')">Compare</button>
-            </div>
-            <div class="product" data-product-id="8" data-product-name="ANNI DESIGNER Women's Kurta with Pant & Dupatta">
-                <img src="images/dress1.jpg" alt="Dress 2">
-                <p>ANNI DESIGNER Women's Kurta with Pant & Dupatta</p>
-                <button onclick="comparePrices(8, 'Dress 2')">Compare</button>
-            </div>
-            <div class="product" data-product-id="9" data-product-name="BLACKSTEP Women's Cotton Blend T-shirt & Pyjama Ethnic Co Ord Set, Printed Night Suit, Western Dress, Sleepwear with Relaxed Fit and Stylish Design">
-                <img src="images/dress2.jpg" alt="Dress 3">
-                <p>BLACKSTEP Women's Cotton Blend T-shirt & Pyjama Ethnic Co Ord Set, Printed Night Suit, Western Dress, Sleepwear with Relaxed Fit and Stylish Design</p>
-                <button onclick="comparePrices(9, 'Dress 3')">Compare</button>
-            </div> 
-            <div class="product" data-product-id="25" data-product-name="SanDisk Extreme SD UHS I 128GB Card for 4K Video for DSLR and Mirrorless Cameras 180MB/s Read & 90MB/s WriteVIMTAG CCTV Camera for Home | Camera CCTV | 2.5K 4MP Pan/Tilt 360 Degree | WiFi Camera | Security Camera for Shop/Indoor | Night Vision | 2-Way Audio | Cloud Storage/SD Card(Upto 512GB) Support | 8211 ">
-                <img src="images/sandisk.png" alt="SanDisk Extreme SD UHS I 128GB Card for 4K Video for DSLR and Mirrorless Cameras 180MB/s Read & 90MB/s WriteVIMTAG CCTV Camera for Home | Camera CCTV | 2.5K 4MP Pan/Tilt 360 Degree | WiFi Camera | Security Camera for Shop/Indoor | Night Vision | 2-Way Audio | Cloud Storage/SD Card(Upto 512GB) Support | 8211 ">
-                <p>SanDisk Extreme SD UHS I 128GB Card for 4K Video for DSLR and Mirrorless Cameras 180MB/s Read & 90MB/s WriteVIMTAG CCTV Camera for Home | Camera CCTV | 2.5K 4MP Pan/Tilt 360 Degree | WiFi Camera | Security Camera for Shop/Indoor | Night Vision | 2-Way Audio | Cloud Storage/SD Card(Upto 512GB) Support | 8211 </p>
-                <button onclick="comparePrices(25, 'SanDisk Extreme SD UHS I 128GB Card for 4K Video for DSLR and Mirrorless Cameras 180MB/s Read & 90MB/s WriteVIMTAG CCTV Camera for Home | Camera CCTV | 2.5K 4MP Pan/Tilt 360 Degree | WiFi Camera | Security Camera for Shop/Indoor | Night Vision | 2-Way Audio | Cloud Storage/SD Card(Upto 512GB) Support | 8211')">Compare</button>
-            </div>
-            <div class="product" data-product-id="26" data-product-name="VIMTAG CCTV Camera for Home | Camera CCTV | 2.5K 4MP Pan/Tilt 360 Degree | WiFi Camera | Security Camera for Shop/Indoor | Night Vision | 2-Way Audio | Cloud Storage/SD Card(Upto 512GB) Support | 8211 ">
-                <img src="images/cctv.jpg" alt="VIMTAG CCTV Camera for Home | Camera CCTV | 2.5K 4MP Pan/Tilt 360 Degree | WiFi Camera | Security Camera for Shop/Indoor | Night Vision | 2-Way Audio | Cloud Storage/SD Card(Upto 512GB) Support | 8211 ">
-                <p>VIMTAG CCTV Camera for Home | Camera CCTV | 2.5K 4MP Pan/Tilt 360 Degree | WiFi Camera | Security Camera for Shop/Indoor | Night Vision | 2-Way Audio | Cloud Storage/SD Card(Upto 512GB) Support | 8211 </p>
-                <button onclick="comparePrices(26, 'VIMTAG CCTV Camera for Home | Camera CCTV | 2.5K 4MP Pan/Tilt 360 Degree | WiFi Camera | Security Camera for Shop/Indoor | Night Vision | 2-Way Audio | Cloud Storage/SD Card(Upto 512GB) Support | 8211')">Compare</button>
-            </div>
-            <div class="product" data-product-id="27" data-product-name="rts Universal Travel Adapter, International All in One Worldwide Travel Adapter and Wall Charger with USB Ports with Multi Type Power Outlet USB 2.1A,100-250 Voltage Travel Charger (Black) ">
-                <img src="images/adapter.jpg" alt="rts Universal Travel Adapter, International All in One Worldwide Travel Adapter and Wall Charger with USB Ports with Multi Type Power Outlet USB 2.1A,100-250 Voltage Travel Charger (Black) ">
-                <p>rts Universal Travel Adapter, International All in One Worldwide Travel Adapter and Wall Charger with USB Ports with Multi Type Power Outlet USB 2.1A,100-250 Voltage Travel Charger (Black) </p>
-                <button onclick="comparePrices(27, 'rts Universal Travel Adapter, International All in One Worldwide Travel Adapter and Wall Charger with USB Ports with Multi Type Power Outlet USB 2.1A,100-250 Voltage Travel Charger (Black)')">Compare</button>
-            </div>   
-            <div class="product" data-product-id="10" data-product-name="CB-COLEBROOK Men's Casual Button Down Shirts Long Sleeve Linen Shirt Fashion Textured Beach Summer Shirt">
-                <img src="images/clothes.jpg" alt="Clothes">
-                <p>CB-COLEBROOK Men's Casual Button Down Shirts Long Sleeve Linen Shirt Fashion Textured Beach Summer Shirt</p>
-                <button onclick="comparePrices(10, 'Clothes')">Compare</button>
-            </div>
-            <div class="product" data-product-id="11" data-product-name="Ben Martin Men's Denim Cotton Oversized Loose Baggy Fit Jeans Pants for Men">
-                <img src="images/jeans.jpg" alt="Jeans">
-                <p>Ben Martin Men's Denim Cotton Oversized Loose Baggy Fit Jeans Pants for Men</p>
-                <button onclick="comparePrices(11, 'Jeans')">Compare</button>
-            </div>
-            <div class="product" data-product-id="12" data-product-name="Noble Monk Men's Regular Fit Polo Neck T-shirt | Half Sleeve | Stripe On Chest | Collared Neck Tshirt for Men">
-                <img src="images/tshirt.jpg" alt="T-shirt">
-                <p>Noble Monk Men's Regular Fit Polo Neck T-shirt | Half Sleeve | Stripe On Chest | Collared Neck Tshirt for Men</p>
-                <button onclick="comparePrices(12, 'T-shirt')">Compare</button>
-            </div>
-            <div class="product" data-product-id="28" data-product-name="soundcore by Anker Q20i Wireless Bluetooth Over-Ear Headphones with Hybrid Active Noise Cancelling, 40h Playtime in ANC Mode, Hi-Res Audio, Deep Bass, Personalization via App (Black) ">
-                <img src="images/headphone.png" alt="soundcore by Anker Q20i Wireless Bluetooth Over-Ear Headphones with Hybrid Active Noise Cancelling, 40h Playtime in ANC Mode, Hi-Res Audio, Deep Bass, Personalization via App (Black) ">
-                <p>soundcore by Anker Q20i Wireless Bluetooth Over-Ear Headphones with Hybrid Active Noise Cancelling, 40h Playtime in ANC Mode, Hi-Res Audio, Deep Bass, Personalization via App (Black) </p>
-                <button onclick="comparePrices(28, 'soundcore by Anker Q20i Wireless Bluetooth Over-Ear Headphones with Hybrid Active Noise Cancelling, 40h Playtime in ANC Mode, Hi-Res Audio, Deep Bass, Personalization via App (Black)')">Compare</button>
-            </div>
-            <div class="product" data-product-id="29" data-product-name="Minimalist Hydrating & Repairing Skincare Gift Set ">
-                <img src="images/minimalist.jpg" alt="Minimalist Hydrating & Repairing Skincare Gift Set ">
-                <p>Minimalist Hydrating & Repairing Skincare Gift Set </p>
-                <button onclick="comparePrices(29, 'Minimalist Hydrating & Repairing Skincare Gift Set')">Compare</button>
-            </div>
-            <div class="product" data-product-id="30" data-product-name="PROTOUCH Skin Lift Device | For Fine line & wrinkles | Reduces puffiness & Anti ageing | Bright & Firm skin | Portable | For all skin type ">
-                <img src="images/protouch.png" alt="PROTOUCH Skin Lift Device | For Fine line & wrinkles | Reduces puffiness & Anti ageing | Bright & Firm skin | Portable | For all skin type ">
-                <p>PROTOUCH Skin Lift Device | For Fine line & wrinkles | Reduces puffiness & Anti ageing | Bright & Firm skin | Portable | For all skin type </p>
-                <button onclick="comparePrices(30, 'PROTOUCH Skin Lift Device | For Fine line & wrinkles | Reduces puffiness & Anti ageing | Bright & Firm skin | Portable | For all skin type')">Compare</button>
-            </div>
-             <div class="product" data-product-id="13" data-product-name="Apple iPhone 15 Pro (128 GB) - Natural Titanium">
-                <img src="images/IPhoen-14-Pro.png" alt="iPhone 14 Pro">
-                <p>Apple iPhone 15 Pro (128 GB) - Natural Titanium</p>
-                <button onclick="comparePrices(13, 'iPhone 14 Pro')">Compare</button>
-            </div>
-            <div class="product" data-product-id="14" data-product-name="hotfits Men's Black & Grey Cotton Regular Shorts - Workout, Gym, Running, Yoga and Sports Shorts - Camouflage Printed - Pack of 2">
-                <img src="images/shorts.jpg" alt="Shorts">
-                <p>hotfits Men's Black & Grey Cotton Regular Shorts - Workout, Gym, Running, Yoga and Sports Shorts - Camouflage Printed - Pack of 2</p>
-                <button onclick="comparePrices(14, 'Shorts')">Compare</button>
-            </div>
-            <div class="product" data-product-id="15" data-product-name="C J Enterprise Women's Pure Banarasi Silk Saree Kanjivaram Style Saree With Blouse Piece For Wedding (Vruksh)">
-                <img src="images/dress3.jpg" alt="Dress 4">
-                <p>C J Enterprise Women's Pure Banarasi Silk Saree Kanjivaram Style Saree With Blouse Piece For Wedding (Vruksh)</p>
-                <button onclick="comparePrices(15, 'Dress 4')">Compare</button>
-            </div>
-            <div class="product" data-product-id="31" data-product-name="WALKENT Stylish 15.6" Laptop Bag, Premium Leather, Waterproof, Backpack with Front & Side Pockets for Travel Office College Men Women - Ritzy, 28 L ">
-                <img src="images/bag.png" alt="WALKENT Stylish 15.6" Laptop Bag, Premium Leather, Waterproof, Backpack with Front & Side Pockets for Travel Office College Men Women - Ritzy, 28 L ">
-                <p> WALKENT Stylish 15.6" Laptop Bag, Premium Leather, Waterproof, Backpack with Front & Side Pockets for Travel Office College Men Women - Ritzy, 28 L</p>
-                <button onclick="comparePrices(31, 'WALKENT Stylish 15.6 Laptop Bag, Premium Leather, Waterproof, Backpack with Front & Side Pockets for Travel Office College Men Women - Ritzy, 28 L')">Compare</button>
-            </div>
-            <div class="product" data-product-id="32" data-product-name="PRO Cleaning Shampoo for Sports Shoes Sneakers and canvas I Stain Remover Shoe ShampooI 150 ML ">
-                <img src="images/shoecleaner.png" alt="PRO Cleaning Shampoo for Sports Shoes Sneakers and canvas I Stain Remover Shoe ShampooI 150 ML ">
-                <p>PRO Cleaning Shampoo for Sports Shoes Sneakers and canvas I Stain Remover Shoe ShampooI 150 ML </p>
-                <button onclick="comparePrices(32, 'PRO Cleaning Shampoo for Sports Shoes Sneakers and canvas I Stain Remover Shoe ShampooI 150 ML')">Compare</button>
-            </div>
-            <div class="product" data-product-id="33" data-product-name="MSI CreatorPro X17 HX, Intel 13th Gen. i9-13980HX,44CM UHD 144Hz Mini LED Creator Laptop (64GB/4TB NVMe SSD/Windows 11 Pro/NVIDIA RTX™ 3500 Ada, GDDR6 12GB/Core Black/3.3Kg), A13VKS-249IN ">
-                <img src="images/laptop1.png" alt="MSI CreatorPro X17 HX, Intel 13th Gen. i9-13980HX,44CM UHD 144Hz Mini LED Creator Laptop (64GB/4TB NVMe SSD/Windows 11 Pro/NVIDIA RTX™ 3500 Ada, GDDR6 12GB/Core Black/3.3Kg), A13VKS-249IN ">
-                <p>MSI CreatorPro X17 HX, Intel 13th Gen. i9-13980HX,44CM UHD 144Hz Mini LED Creator Laptop (64GB/4TB NVMe SSD/Windows 11 Pro/NVIDIA RTX™ 3500 Ada, GDDR6 12GB/Core Black/3.3Kg), A13VKS-249IN </p>
-                <button onclick="comparePrices(33, 'MSI CreatorPro X17 HX, Intel 13th Gen. i9-13980HX,44CM UHD 144Hz Mini LED Creator Laptop (64GB/4TB NVMe SSD/Windows 11 Pro/NVIDIA RTX™ 3500 Ada, GDDR6 12GB/Core Black/3.3Kg), A13VKS-249IN')">Compare</button>
-            </div>
-        
-            <div class="product" data-product-id="16" data-product-name="Boldfit Polyester Wrist Supporter for Gym Wrist Band for Men Gym & Women with Thumb Loop Straps Accessories for Men Hand Grip & Wrist Support Sports Straps for Gym, Weightlifting -(Grey)">
-                <img src="images/gym.png" alt="Boldfit Wrist Supporter">
-                <p>Boldfit Polyester Wrist Supporter for Gym Wrist Band for Men Gym & Women with Thumb Loop Straps Accessories for Men Hand Grip & Wrist Support Sports Straps for Gym, Weightlifting -(Grey)</p>
-                <button onclick="comparePrices(16, 'Boldfit Wrist Supporter')">Compare</button>
-            </div>
-            <div class="product" data-product-id="17" data-product-name="boAt Airdopes 300 TWS in-Ear Earbuds w/ 4 Mics AI-ENx™, Spatial Audio, 50 hrs Playtime, Multipoint Connection, ASAP™ Charge, Hearables App Support(Gunmetal Black)">
-                <img src="images/airpods.jpg" alt="boAt Airdopes 300 TWS in-Ear Earbuds w/ 4 Mics AI-ENx™, Spatial Audio, 50 hrs Playtime, Multipoint Connection, ASAP™ Charge, Hearables App Support(Gunmetal Black)">
-                <p>boAt Airdopes 300 TWS in-Ear Earbuds w/ 4 Mics AI-ENx™, Spatial Audio, 50 hrs Playtime, Multipoint Connection, ASAP™ Charge, Hearables App Support(Gunmetal Black)</p>
-                <button onclick="comparePrices(17, 'boAt Airdopes 300 TWS in-Ear Earbuds w/ 4 Mics AI-ENx™, Spatial Audio, 50 hrs Playtime, Multipoint Connection, ASAP™ Charge, Hearables App Support(Gunmetal Black)')">Compare</button>
-            </div>
-            <div class="product" data-product-id="18" data-product-name="OnePlus Nord CE4 Lite 5G (Super Silver, 8GB RAM, 128GB Storage)">
-                <img src="images/mobile.png" alt="OnePlus Nord CE4 Lite 5G (Super Silver, 8GB RAM, 128GB Storage)">
-                <p>OnePlus Nord CE4 Lite 5G (Super Silver, 8GB RAM, 128GB Storage)</p>
-                <button onclick="comparePrices(18, 'OnePlus Nord CE4 Lite 5G (Super Silver, 8GB RAM, 128GB Storage)')">Compare</button>
-            </div>
-            <div class="product" data-product-id="34" data-product-name="HP Victus Gaming Laptop,12th Gen Intel Core i5-12450H,4GB RTX 3050 GPU,15.6-inch(39.6 cm),FHD,IPS,16GB DDR4,512GB SSD,Backlit KB,Dual speakers (MSO, Blue,2.37 kg),fa0666TX/fa0444tx ">
-                <img src="images/laptop2.png" alt="HP Victus Gaming Laptop,12th Gen Intel Core i5-12450H,4GB RTX 3050 GPU,15.6-inch(39.6 cm),FHD,IPS,16GB DDR4,512GB SSD,Backlit KB,Dual speakers (MSO, Blue,2.37 kg),fa0666TX/fa0444tx ">
-                <p>HP Victus Gaming Laptop,12th Gen Intel Core i5-12450H,4GB RTX 3050 GPU,15.6-inch(39.6 cm),FHD,IPS,16GB DDR4,512GB SSD,Backlit KB,Dual speakers (MSO, Blue,2.37 kg),fa0666TX/fa0444tx </p>
-                <button onclick="comparePrices(34, 'HP Victus Gaming Laptop,12th Gen Intel Core i5-12450H,4GB RTX 3050 GPU,15.6-inch(39.6 cm),FHD,IPS,16GB DDR4,512GB SSD,Backlit KB,Dual speakers (MSO, Blue,2.37 kg),fa0666TX/fa0444tx')">Compare</button>
-            </div>
-            <div class="product" data-product-id="35" data-product-name="ANAYRA Pure Silver Necklace Set For Women, 925 Silver jewelry Set, Gifts, Women Necklace Set Design, Elegant jewelry Set For Women, Birthday Gift For Women ">
-                <img src="images/necklace.png" alt="ANAYRA Pure Silver Necklace Set For Women, 925 Silver jewelry Set, Gifts, Women Necklace Set Design, Elegant jewelry Set For Women, Birthday Gift For Women ">
-                <p>ANAYRA Pure Silver Necklace Set For Women, 925 Silver jewelry Set, Gifts, Women Necklace Set Design, Elegant jewelry Set For Women, Birthday Gift For Women </p>
-                <button onclick="comparePrices(35, 'ANAYRA Pure Silver Necklace Set For Women, 925 Silver jewelry Set, Gifts, Women Necklace Set Design, Elegant jewelry Set For Women, Birthday Gift For Women')">Compare</button>
-            </div>
-            <div class="product" data-product-id="36" data-product-name="Metro Women Synthetic Sandals (35-3128) ">
-                <img src="images/sandals.png" alt="Metro Women Synthetic Sandals (35-3128) ">
-                <p> Metro Women Synthetic Sandals (35-3128)</p>
-                <button onclick="comparePrices(36, 'Metro Women Synthetic Sandals (35-3128)')">Compare</button>
-            </div>
-        </div><!-- or row idhar ayege -->
-    </div>
-    
-    <footer>
-        <a href="index.html">Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="https://www.instagram.com/comparecart.tech" target="_blank">Contact Us</a>
-    </footer>
-    
-    <div id="notification" class="notification">
-        <div class="notification-content">
-            <button class="close-btn" onclick="closeNotification()">&times;</button>
-            <p>Website is still in development.<br>If you have any issue click on contact us!</p>
-            <a href="https://www.instagram.com/comparecart.tech" class="notification-link">Feedback</a>
+            <input type="submit" class="btn" value="Sign Up" name="signUp">
+        </form>
+        <p class="or">----------or--------</p>
+        <div class="icons">
+            <i class="fab fa-google"></i>
+            <i class="fab fa-facebook"></i>
         </div>
+        <div class="links">
+            <p>Already Have Account?</p>
+            <button id="signInButton">Sign In</button>
+        </div>
+        <button class="continue-btn" onclick="continueWithoutLogin()">Continue without Login</button>
     </div>
 
-        <!-- JavaScript -->
-        <script>
-            function comparePrices(productId, productName) {
-                window.location.href = `compare.html?product=${productId}&name=${encodeURIComponent(productName)}`;
-                showNotification("Comparing prices for " + productName);
-            }
-    
-            function showNotification(message) {
-                var notification = document.getElementById("notification");
-                var notificationMessage = notification.querySelector("p");
-                notificationMessage.textContent = message;
-                notification.style.display = "flex";
-            }
-    
-            function closeNotification() {
-                var notification = document.getElementById("notification");
-                notification.style.display = "none";
-            }
-    
-            function toggleSidebar() {
-                var sidebar = document.getElementById("sidebar");
-                if (sidebar.style.width === "250px") {
-                    sidebar.style.width = "0";
-                } else {
-                    sidebar.style.width = "250px";
-                }
-            }
-    
-            // Attach the function to the icon
-            document.querySelector('.more-options-icon').onclick = toggleSidebar;
-    
-            function searchProducts() {
-                var input = document.getElementById('search-bar').value.toLowerCase();
-                var productRows = document.querySelectorAll('.product-row');
-    
-                productRows.forEach(function(row) {
-                    var products = row.querySelectorAll('.product');
-                    var hasVisibleProduct = false;
-    
-                    products.forEach(function(product) {
-                        var productName = product.getAttribute('data-product-name').toLowerCase();
-                        var productDescription = product.querySelector('p').textContent.toLowerCase();
-    
-                        if (productName.includes(input) || productDescription.includes(input)) {
-                            product.style.display = 'block';
-                            hasVisibleProduct = true;
-                        } else {
-                            product.style.display = 'none';
-                        }
-                    });
-    
-                    if (hasVisibleProduct) {
-                        row.style.display = 'flex';
-                    } else {
-                        row.style.display = 'none';
-                    }
-                });
-            }
-
-        // Function to shuffle array
-        function shuffle(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-        }
-
-        // Function to shuffle products
-        function shuffleProducts() {
-            var container = document.getElementById('product-container');
-            var rows = Array.from(container.getElementsByClassName('product-row'));
-            var products = [];
-
-            // Gather all products
-            rows.forEach(function(row) {
-                var rowProducts = Array.from(row.getElementsByClassName('product'));
-                products = products.concat(rowProducts);
-            });
-
-            // Clear the container
-            container.innerHTML = '';
-
-            // Shuffle products array
-            shuffle(products);
-
-            // Create and append new rows with shuffled products
-            while (products.length > 0) {
-                var newRow = document.createElement('div');
-                newRow.classList.add('product-row');
-                for (let j = 0; j < 3; j++) {
-                    if (products.length > 0) {
-                        newRow.appendChild(products.shift());
-                    }
-                }
-                container.appendChild(newRow);
-            }
-        }
-
-        // Shuffles products when the page loads
-        window.onload = function() {
-            shuffleProducts();
-        };
-    </script>
-
-    <div id="sidebar" class="sidebar">
-        <a href="#" class="close-btn" onclick="toggleSidebar()">&times;</a>
-        <a href="index.html">Home</a>
-        <a href="#">Coming soon</a>
-        <a href="#">Coming soon</a>
-        <a href="#">Coming soon</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="about.html">About Us</a>
+    <div class="container" id="signIn">
+        <h1 class="form-title">Sign In</h1>
+        <form method="post" action="register.php">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <label for="password">Password</label>
+            </div>
+            <p class="recover">
+                <a href="#">Recover Password</a>
+            </p>
+            <input type="submit" class="btn" value="Sign In" name="signIn">
+        </form>
+        <p class="or">----------or--------</p>
+        <div class="icons">
+            <i class="fab fa-google"></i>
+            <i class="fab fa-facebook"></i>
+        </div>
+        <div class="links">
+            <p>Don't have account yet?</p>
+            <button id="signUpButton">Sign Up</button>
+        </div>
+        <button class="continue-btn" onclick="continueWithoutLogin()">Continue without Login</button>
     </div>
-
+    <script src="script.js"></script>
 </body>
 </html>
-    
-

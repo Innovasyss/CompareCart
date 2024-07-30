@@ -52,7 +52,7 @@ header input {
 
 .product,
 .additional-product {
-    flex: 0 1 200px; /* Adjusted for responsive design */
+    flex: 0 1 240px; /* Increased from 200px to 220px */
     margin: 10px;
     text-align: center;
     padding: 10px;
@@ -77,7 +77,7 @@ header input {
     overflow: hidden; /* Hide overflow */
     text-overflow: ellipsis; /* Add ellipsis for overflow */
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limit to two lines */
+    
     -webkit-box-orient: vertical;
 }
 
@@ -145,7 +145,7 @@ header input {
     text-align: center;
     flex: 1;
     margin: 10px;
-    max-width: 200px;
+    max-width: 240px; /* Increased max-width to match the product card width */
     box-sizing: border-box;
 }
 
@@ -360,3 +360,5 @@ footer a:hover {
     font-size: 36px;
     cursor: pointer;
 }
+
+
