@@ -1,3 +1,4 @@
+/* Existing styles for body and header */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,6 +14,7 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: relative; /* Ensure header is positioned correctly for absolute children */
 }
 
 header .logo {
@@ -34,6 +36,33 @@ header input {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
+
+/* Style for the navigation bar in the header */
+header .top-nav {
+    position: absolute;
+    top: 35px; /* Adjust top positioning to match header padding */
+    left: 70px; /* Adjust left positioning to match header padding */
+    transform: translateY(-50%);
+    display: flex;
+    gap: 30px; /* Space between buttons */
+}
+
+/* Style for the navigation buttons */
+header .top-nav a {
+    text-decoration: none;
+    color: white; /* Text color */
+    font-size: 1.0rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #333; /* Default button background color */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header .top-nav a:hover {
+    background-color: #37b41b; /* Button background color on hover */
+    color: #ffffff; /* Button text color on hover */
+}
+
 
 .product-row-container {
     margin: 20px;
