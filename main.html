@@ -13,7 +13,8 @@
     <header>
         <i class="fas fa-bars more-options-icon" onclick="showNotReadyMessage()"></i>
         <h1>CompareCart.tech</h1>
-        <input type="text" id="search-bar" placeholder="Search for products..." onkeyup="searchProducts()">
+        <input type="text" id="search-bar" placeholder="Search for products name or id" onkeyup="searchProducts()">
+        <i class="fas fa-search search-icon" onclick="toggleSearchBar()"></i>
         <nav class="top-nav">
             <a href="main.html">Home</a>
             <a href="help.html">Help</a>
@@ -29,7 +30,7 @@
             
             <div class="product" data-product-id="1" data-product-name="Cetaphil Face Wash Gentle Skin Cleanser for Dry to Normal, Sensitive Skin, 125 ml Hydrating Face Wash with Niacinamide, Vitamin B5">
                 <img src="images/cleanser.png" alt="Cetaphil Face Wash Gentle Skin Cleanser for Dry to Normal, Sensitive Skin, 125 ml Hydrating Face Wash with Niacinamide, Vitamin B5">
-                <p>Cetaphil Face Wash Gentle Skin Cleanser for Dry to Normal, Sensitive Skin, 125 ml Hydrating Face Wash with Niacinamide, Vitamin B5</p>
+                <p class="description">Cetaphil Face Wash Gentle Skin Cleanser for Dry to Normal, Sensitive Skin, 125 ml Hydrating Face Wash with Niacinamide, Vitamin B5</p>
                 <button onclick="comparePrices(1, 'Cetaphil Face Wash Gentle Skin Cleanser for Dry to Normal, Sensitive Skin, 125 ml Hydrating Face Wash with Niacinamide, Vitamin B5')">Compare</button>
             </div>
             <div class="product" data-product-id="2" data-product-name="Ant Esports GP110 Wired Gamepad, Compatible for PC & Laptop Computer (Windows 10/8 /7) / PS3 / Android">
@@ -213,9 +214,7 @@
     </div>
     
     <footer>
-        <a href="index.html">Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="https://www.instagram.com/comparecart.tech" target="_blank">Contact Us</a>
+        <a>© 2024, CompareCart.tech</a>
     </footer>
 
     <div id="notification" class="notification">
@@ -226,6 +225,15 @@
         </div>
     </div>
 
+    <div id="sidebar" class="sidebar">
+        <a href="#" class="close-btn" onclick="toggleSidebar()">&times;</a>
+        <a href="main.html">Profile</a>
+        <a href="#">History</a>
+        <a href="#">Wishlist</a>
+        <a href="#">Legal</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="about.html">About Us</a>
+    </div>
 
     <!-- JavaScript -->
     <script>
@@ -339,8 +347,23 @@
             modal.style.display = "none";
         }
 
+        function toggleSearchBar() {
+            var searchBar = document.getElementById('search-bar');
+            if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+                searchBar.style.display = 'block';
+                searchBar.focus();
+            } else {
+                searchBar.style.display = 'none';
+            }
+        }
+
         // Attach the function to the icon
         document.querySelector('.more-options-icon').onclick = toggleSidebar;
+        function toggleSearchBar() {
+    var searchBar = document.getElementById('search-bar');
+    searchBar.classList.toggle('show');
+}
+
     </script>
 
     <div id="sidebar" class="sidebar">

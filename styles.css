@@ -63,6 +63,43 @@ header .top-nav a:hover {
     color: #ffffff; /* Button text color on hover */
 }
 
+/* Mobile styles */
+@media (max-width: 600px) {
+    header input[type="text"] {
+        display: none; /* Hide search bar on mobile */
+    }
+
+    header .search-icon {
+        display: block; /* Show search icon on mobile */
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    /* Show the search bar when search icon is clicked */
+    header input.show {
+        display: block; /* Show search bar on mobile when icon is clicked */
+        width: calc(100% - 20px); /* Full width minus some padding */
+        margin-top: 10px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 601px) {
+    header input[type="text"] {
+        display: block; /* Show search bar on desktop */
+        width: 300px; /* Adjust width as needed */
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    header .search-icon {
+        display: none; /* Hide search icon on desktop */
+    }
+}
 
 .product-row-container {
     margin: 20px;
@@ -81,13 +118,17 @@ header .top-nav a:hover {
 
 .product,
 .additional-product {
-    flex: 0 1 240px; /* Increased from 200px to 220px */
+    flex: 0 1 240px; /* Fixed width */
+    height: 350px; /* Fixed height */
     margin: 10px;
     text-align: center;
     padding: 10px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure content does not overflow */
+    position: relative; /* For positioning child elements */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .product img,
@@ -102,12 +143,11 @@ header .top-nav a:hover {
 .additional-product .product-name {
     margin-top: 10px;
     font-size: 1rem;
-    white-space: normal; /* Allow text to wrap */
+    white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden; /* Hide overflow */
     text-overflow: ellipsis; /* Add ellipsis for overflow */
-    display: -webkit-box;
-    
-    -webkit-box-orient: vertical;
+    display: block; /* Ensure block display */
+    height: 2.4em; /* Fixed height for text */
 }
 
 .product button,
@@ -121,11 +161,30 @@ header .top-nav a:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: absolute; /* Absolute positioning */
+    bottom: 10px; /* Position at the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
 }
 
 .product button:hover,
 .additional-product button:hover {
     background-color: #28a745;
+}
+
+.product:hover,
+.additional-product:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+}
+
+.product:hover .product-name,
+.additional-product:hover .product-name {
+    white-space: normal; /* Allow text to wrap on hover */
+    overflow: visible; /* Show overflow */
+    text-overflow: unset; /* Remove ellipsis */
+    height: auto; /* Auto height to show full text */
+    background: white; /* Optional: background for better visibility */
 }
 
 .scroll-btn {
@@ -389,5 +448,3 @@ footer a:hover {
     font-size: 36px;
     cursor: pointer;
 }
-
-
