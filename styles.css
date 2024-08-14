@@ -1,4 +1,4 @@
-/* Existing styles for body and header */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -14,7 +14,7 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    position: relative; /* Ensure header is positioned correctly for absolute children */
+    position: relative; 
 }
 
 header .logo {
@@ -37,67 +37,73 @@ header input {
     border: 1px solid #ccc;
 }
 
-/* Style for the navigation bar in the header */
+
 header .top-nav {
     position: absolute;
-    top: 35px; /* Adjust top positioning to match header padding */
-    left: 70px; /* Adjust left positioning to match header padding */
+    top: 35px; 
+    left: 70px; 
     transform: translateY(-50%);
     display: flex;
-    gap: 30px; /* Space between buttons */
+    gap: 30px; 
 }
 
-/* Style for the navigation buttons */
+
 header .top-nav a {
     text-decoration: none;
-    color: white; /* Text color */
+    color: white; 
     font-size: 1.0rem;
     padding: 5px 10px;
     border-radius: 5px;
-    background-color: #333; /* Default button background color */
+    background-color: #333; 
     transition: background-color 0.3s, color 0.3s;
 }
 
 header .top-nav a:hover {
-    background-color: #37b41b; /* Button background color on hover */
-    color: #ffffff; /* Button text color on hover */
+    background-color: #37b41b; 
+    color: #ffffff; 
 }
 
-/* Mobile styles */
 @media (max-width: 600px) {
     header input[type="text"] {
-        display: none; /* Hide search bar on mobile */
+        display: none; 
     }
 
     header .search-icon {
-        display: block; /* Show search icon on mobile */
+        display: block; 
         color: white;
         font-size: 1.5rem;
         cursor: pointer;
         margin-left: 10px;
     }
 
-    /* Show the search bar when search icon is clicked */
+    
     header input.show {
-        display: block; /* Show search bar on mobile when icon is clicked */
-        width: calc(100% - 20px); /* Full width minus some padding */
+        display: block; 
+        width: calc(100% - 20px); 
         margin-top: 10px;
+    }
+    header .top-nav {
+        display: none;
     }
 }
 
-/* Desktop styles */
+
 @media (min-width: 601px) {
     header input[type="text"] {
-        display: block; /* Show search bar on desktop */
-        width: 300px; /* Adjust width as needed */
+        display: block; 
+        width: 300px; 
         padding: 10px;
         margin-top: 10px;
         border-radius: 5px;
         border: 1px solid #ccc;
     }
+    
 
     header .search-icon {
-        display: none; /* Hide search icon on desktop */
+        display: none; 
+    }
+    header .top-nav {
+        display: flex;
     }
 }
 
@@ -118,24 +124,24 @@ header .top-nav a:hover {
 
 .product,
 .additional-product {
-    flex: 0 1 240px; /* Fixed width */
-    height: 320px; /* Fixed height */
+    flex: 0 1 240px;
+    height: 320px; 
     margin: 10px;
     text-align: center;
     padding: 10px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ensure content does not overflow */
-    position: relative; /* For positioning child elements */
+    overflow: hidden; 
+    position: relative; 
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .product img,
 .additional-product img {
     width: 100%;
-    height: 200px; /* Fixed height */
-    object-fit: cover; /* Cover to maintain aspect ratio */
+    height: 200px; 
+    object-fit: cover; 
     border-radius: 10px;
 }
 
@@ -143,11 +149,11 @@ header .top-nav a:hover {
 .additional-product .description {
     margin-top: 10px;
     font-size: 1rem;
-    white-space: nowrap; /* Prevent text wrapping */
-    overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Add ellipsis for overflow */
-    display: block; /* Ensure block display */
-    height: 1.4em; /* Adjust height for one line of text */
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: block; 
+    height: 1.4em; 
 }
 
 .product button,
@@ -161,10 +167,10 @@ header .top-nav a:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    position: absolute; /* Absolute positioning */
-    bottom: 10px; /* Position at the bottom */
+    position: absolute; 
+    bottom: 10px; 
     left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
+    transform: translateX(-50%); 
 }
 
 .product button:hover,
@@ -174,17 +180,17 @@ header .top-nav a:hover {
 
 .product:hover,
 .additional-product:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+    transform: scale(1.05); 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
 }
 
 .product:hover .description,
 .additional-product:hover .description {
-    white-space: normal; /* Allow text to wrap on hover */
-    overflow: visible; /* Show overflow */
-    text-overflow: unset; /* Remove ellipsis */
-    height: auto; /* Auto height to show full text */
-    background: white; /* Optional: background for better visibility */
+    white-space: normal; 
+    overflow: visible; 
+    text-overflow: unset; 
+    height: auto; 
+    background: white; 
 }
 
 .scroll-btn {
@@ -233,7 +239,7 @@ header .top-nav a:hover {
     text-align: center;
     flex: 1;
     margin: 10px;
-    max-width: 240px; /* Increased max-width to match the product card width */
+    max-width: 240px; 
     box-sizing: border-box;
 }
 
@@ -298,7 +304,7 @@ footer a:hover {
     }
 
     .product-row {
-        justify-content: center; /* Center items on smaller screens */
+        justify-content: center; 
     }
 
     .comparison-container {
@@ -326,7 +332,7 @@ footer a:hover {
     }
 
     .product-row {
-        justify-content: center; /* Center items on smaller screens */
+        justify-content: center; 
     }
 
     .comparison-container {
@@ -344,7 +350,7 @@ footer a:hover {
     }
 }
 
-/* New CSS for the notification */
+
 .notification {
     position: fixed;
     top: 0;
@@ -411,7 +417,7 @@ footer a:hover {
     color: #ff9900;
 }
 
-/* The sidebar menu */
+
 .sidebar {
     height: 100%;
     width: 0;
@@ -426,7 +432,7 @@ footer a:hover {
     padding-top: 60px;
 }
 
-/* Sidebar links */
+
 .sidebar a {
     padding: 10px 15px;
     text-decoration: none;
@@ -440,7 +446,7 @@ footer a:hover {
     background-color: #f0f0f0;
 }
 
-/* Close button */
+
 .sidebar .close-btn {
     position: absolute;
     top: 10px;
@@ -451,36 +457,36 @@ footer a:hover {
 
 .product:hover .description,
 .additional-product:hover .description {
-    white-space: normal; /* Allow text to wrap on hover */
-    overflow: visible; /* Show overflow */
-    text-overflow: unset; /* Remove ellipsis */
-    height: auto; /* Auto height to show full text */
-    background: white; /* Optional: background for better visibility */
+    white-space: normal; 
+    overflow: visible; 
+    text-overflow: unset; 
+    height: auto; 
+    background: white; 
 }
-/* Adjust the product description style */
+
 .product .description,
 .additional-product .description {
     margin-top: 10px;
     font-size: 1rem;
-    white-space: normal; /* Allow text wrapping */
-    overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Add ellipsis for overflow */
-    display: -webkit-box; /* Use display: -webkit-box for multi-line ellipsis */
-    -webkit-line-clamp: 3; /* Show three lines of text */
-    -webkit-box-orient: vertical; /* Required for -webkit-line-clamp to work */
-    height: calc(1.2em * 3); /* Adjust height for three lines of text */
+    white-space: normal; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical; 
+    height: calc(1.2em * 3); 
 }
 
 .product .product-name,
 .additional-product .product-name {
     margin-top: 10px;
     font-size: 1rem;
-    white-space: initial; /* Allow text to wrap */
-    overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Add ellipsis for overflow */
-    display: -webkit-box; /* Use webkit box model */
-    -webkit-box-orient: vertical; /* Set orientation to vertical */
-    -webkit-line-clamp: 3; /* Show 3 lines before ellipsis */
-    height: calc(1.2em * 3); /* Adjust height for 3 lines */
+    white-space: initial; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 3; 
+    height: calc(1.2em * 3); 
 }
 
