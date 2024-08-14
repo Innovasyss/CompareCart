@@ -330,6 +330,22 @@
     searchBar.classList.toggle('show');
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.product-row');
+    const products = Array.from(container.children);
+
+    // Shuffle the array of products
+    for (let i = products.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [products[i], products[j]] = [products[j], products[i]];
+    }
+
+    // Clear the container and append shuffled products
+    container.innerHTML = '';
+    products.forEach(product => container.appendChild(product));
+});
+
+
     </script>
 
     <div id="sidebar" class="sidebar">
