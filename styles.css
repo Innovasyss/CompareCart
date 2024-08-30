@@ -120,6 +120,8 @@ header .top-nav a:hover {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .product,
@@ -304,7 +306,11 @@ footer a:hover {
     }
 
     .product-row {
-        justify-content: center; 
+        justify-content: center;
+        display: flex;
+        gap: 20px; /* Space between products */
+        overflow-x: auto; /* Allows horizontal scrolling */
+        white-space: nowrap; /* Keeps all products on one line */ 
     }
 
     .comparison-container {
@@ -333,6 +339,10 @@ footer a:hover {
 
     .product-row {
         justify-content: center; 
+        display: flex;
+        gap: 20px; /* Space between products */
+        overflow-x: auto; /* Allows horizontal scrolling */
+        white-space: nowrap; /* Keeps all products on one line */
     }
 
     .comparison-container {
