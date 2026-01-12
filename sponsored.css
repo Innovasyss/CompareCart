@@ -1,0 +1,56 @@
+/* styles for sponsored content panels */
+
+.desktop-layout-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between panels and main content */
+}
+
+.sponsored-panel {
+    width: 180px; /* Fixed width for the panels */
+    padding: 15px;
+    background-color: #f8f9fa; /* Light neutral background */
+    border: 1px dashed #ccc; /* Soft dashed border */
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    height: fit-content; /* Make the panel height fit its content */
+    position: sticky;
+    top: 20px; /* Adjust as needed, should be based on header height */
+}
+
+.sponsored-label {
+
+    font-weight: bold;
+
+    font-size: 0.7rem;
+
+    color: #888;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+/* Responsive styles */
+
+@media (max-width: 1300px) {
+
+    .sponsored-panel {
+
+        display: none; /* Hide panels on smaller screens */
+
+    }
+
+
+
+    .desktop-layout-container {
+
+        display: block; /* Revert to default block behavior */
+
+    }
+
+}

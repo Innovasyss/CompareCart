@@ -1,0 +1,55 @@
+/* User Profile Avatar Styles */
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+}
+
+.dropdown {
+    /* Position the dropdown below the avatar */
+    position: absolute;
+    top: calc(100% + var(--spacing-sm)); /* Position below the header */
+    right: 0;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    list-style: none;
+    padding: var(--spacing-sm) 0;
+    margin: 0;
+    width: 180px;
+    /* Hidden by default */
+    display: none;
+    /* Ensures dropdown is above other content */
+    z-index: 1010;
+    border: 1px solid var(--color-border);
+}
+
+/* Show the dropdown when the 'show' class is added */
+.dropdown.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--color-text);
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+}
+
+.dropdown-item:hover {
+    background-color: var(--color-light);
+}

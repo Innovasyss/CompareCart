@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compare Prices</title>
+    <title>My Profile - CompareCart</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="user-profile.css">
+    <link rel="stylesheet" href="auth.css">
 </head>
 <body>
     <header class="main-header">
         <div class="container">
-            <!-- Left Zone: Logo -->
             <div class="header-zone-left">
-                <a href="main.html" class="logo">CompareCart</a>
+                <a href="main.html" class="logo">
+                    <img src="logo-removebg-preview.png" alt="CompareCart" class="logo-image">
+                </a>
             </div>
 
-            <!-- Center Zone: Navigation -->
-            <nav class="header-zone-center main-nav">
-                <a href="#" id="nav-favorites">Favorites</a>
-            </nav>
+            <div class="header-zone-center">
+                <!-- Search bar removed as requested -->
+            </div>
 
-            <!-- Right Zone: Search and User Profile -->
             <div class="header-zone-right">
-                <div class="search-container">
-                    <input type="text" id="search-bar" placeholder="Search...">
-                    <button id="search-button">Search</button>
-                </div>
                 <div class="user-profile">
                     <div class="avatar" id="avatar">U</div>
                     <ul class="dropdown" id="dropdown">
@@ -38,10 +34,18 @@
     </header>
 
     <main class="container">
-        <h2 id="product-name" class="comparison-title"></h2>
-        <section id="price-comparison-grid" class="price-comparison-grid">
-            <!-- Price comparison results will be dynamically injected here -->
-        </section>
+        <div style="margin-bottom: 20px;">
+            <a href="main.html" class="product-card__button" style="display: inline-block; width: auto; background-color: var(--color-secondary); padding: 8px 16px;">
+                &larr; Back
+            </a>
+        </div>
+
+        <div class="auth-card" style="margin: 0 auto;">
+            <h2 style="text-align: center; margin-bottom: 20px;">My Profile</h2>
+            <div id="profile-content">
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
     </main>
 
     <footer class="main-footer">

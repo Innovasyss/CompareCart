@@ -4,34 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        h2 {
-            font-size: 1.2em;
-        }
-        p {
-            margin-bottom: 10px;
-        }
-        ul {
-            margin-bottom: 10px;
-            padding-left: 20px;
-        }
-    </style>
-    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="user-profile.css">
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    
-    <p>Effective Date: 25-08-2024 [ Expected date ] </p>
+    <header class="main-header">
+        <div class="container">
+            <!-- Left Zone: Logo -->
+            <div class="header-zone-left">
+                <a href="main.html" class="logo">CompareCart</a>
+            </div>
 
-    <p>Thank you for visiting our website. Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website https://bhaveshwebs.github.io/CompareCart/ , including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the "Site"). Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.</p>
+            <!-- Center Zone: Navigation -->
+            <nav class="header-zone-center main-nav">
+                <a href="#" id="nav-favorites">Favorites</a>
+            </nav>
+
+            <!-- Right Zone: Search and User Profile -->
+            <div class="header-zone-right">
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="Search...">
+                    <button id="search-button">Search</button>
+                </div>
+                <div class="user-profile">
+                    <div class="avatar" id="avatar">U</div>
+                    <ul class="dropdown" id="dropdown">
+                        <li><a href="profile.html" class="dropdown-item">Profile</a></li>
+                        <li><a href="#" class="dropdown-item">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Privacy Policy</h1>
+    
+        <p>Effective Date: 25-08-2026</p>
+
+        <p>Thank you for visiting our website. Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the "Site"). Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.</p>
 
     <h2>1. Information We Collect</h2>
 
@@ -91,11 +102,24 @@
         <li>By email: bhaveshwebsites@gmail.com </li>
         <li>By visiting this page on our website: [ Click on contact us at home page ]</li>
     </ul>
+    </main>
 
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="main.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 CompareCart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="script.js"></script>
+    <script src="user-profile.js"></script>
 </body>
-<header>
-    <i class="fas fa-bars more-options-icon" onclick="toggleSidebar()"></i>
-    <a href="index.html"><img src="images/logo.png" alt="logo" class="logo" border="0"></a>
-    <h1>Thankyou for showing your interest !!</h1>
-</header>
 </html>

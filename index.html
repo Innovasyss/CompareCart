@@ -1,55 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to CompareCart</title>
-    <!-- Cool Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
-    <!-- Our stylesheet -->
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
 </head>
-<body>
-    <div id="content_container">
-        <div id="form_container">
-            <div id="form_header_container">
-                <div id="tab_container">
-                    <button id="login_tab" onclick="showLogin()">Login</button>
-                    <button id="register_tab" onclick="showRegister()">Register</button>
-                </div>
-            </div>
+<body class="login-page">
 
-            <div id="form_content_container">
-                <div id="login_form" class="form_content">
-                    <input type="email" id="login_email" placeholder="Email">
-                    <input type="password" id="login_password" placeholder="Password">
-                    <div id="button_container">
-                        <button onclick="login()">Submit</button>
-                    </div>
+    <div class="onboarding-container">
+        <!-- Left Section: Branding -->
+        <div class="onboarding-brand-section">
+            <img src="logo-removebg-preview.png" alt="CompareCart Logo" class="brand-logo">
+            <h1 class="brand-title">CompareCart</h1>
+            <p class="brand-tagline">Compare prices. Save smarter.</p>
+            
+            <ul class="brand-benefits">
+                <li>
+                    <span class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </span>
+                    <p>Compare prices across top e-commerce platforms</p>
+                </li>
+                <li>
+                    <span class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </span>
+                    <p>Find the best deals instantly</p>
+                </li>
+                <li>
+                    <span class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </span>
+                    <p>Save money on every purchase</p>
+                </li>
+                 <li>
+                    <span class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </span>
+                    <p>Simple, fast, clutter-free</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Right Section: Auth Form -->
+        <div class="onboarding-auth-section">
+            <div class="auth-card">
+                <img src="logo-removebg-preview.png" alt="CompareCart Logo" class="auth-card-logo">
+
+                <input type="radio" name="auth-tab" id="tab-login" class="auth-tab-radio" checked>
+                <input type="radio" name="auth-tab" id="tab-register" class="auth-tab-radio">
+                
+                <div class="auth-tabs">
+                    <label for="tab-login" class="auth-tab">Login</label>
+                    <label for="tab-register" class="auth-tab">Register</label>
                 </div>
 
-                <div id="register_form" class="form_content">
-                    <input type="text" id="full_name" placeholder="Full name">
-                    <input type="email" id="register_email" placeholder="Email">
-                    <input type="password" id="register_password" placeholder="New Password">
-                    <input type="password" id="confirm_password" placeholder="Confirm Password">
-                    <input type="text" id="age" placeholder="Age">
-                    <div id="button_container">
-                        <button onclick="register()">Submit</button>
-                    </div>
+                <div class="auth-forms">
+                    <form id="login-form" class="auth-form">
+                        <input type="email" id="login-email" placeholder="Email">
+                        <input type="password" id="login-password" placeholder="Password">
+                        <button id="login-button">Login</button>
+                    </form>
+
+                    <form id="register-form" class="auth-form">
+                        <input type="text" id="full-name" placeholder="Full name">
+                        <input type="email" id="register-email" placeholder="Email">
+                        <input type="password" id="register-password" placeholder="New Password">
+                        <input type="password" id="confirm-password" placeholder="Confirm Password">
+                        <input type="text" id="age" placeholder="Age">
+                        <button id="register-button">Create Account</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-    <!-- Our script must be loaded after firebase references -->
-    <script src="index.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
